@@ -32,15 +32,17 @@
                 <td>
                     <a href="/document?document_id={{doc['id']}}">{{doc.title}}</a>
                 </td>
-                {% if doc.year %}
-                <td>{{doc.year}}</td>
-                {% else %}
-                <td></td>
-                {% endif %} {% if doc.file_attached %}
+
                 <td>
-                    <a href="/download?document_id={{doc['id']}}">Download</a>
+                    {% if doc.year %} {{doc.year}} {% endif %}
                 </td>
-                {% endif %}
+
+                <td>
+                    {% if doc.file_attached %}
+                    <a href="/download?document_id={{doc['id']}}">Download</a>
+                    {% endif %}
+                </td>
+
             </tr>
             {% endfor %}
         </tbody>
