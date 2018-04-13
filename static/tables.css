@@ -1,0 +1,129 @@
+
+table {
+    background:#55565A;
+    border-radius:3px;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
+    margin-top:1em;
+}
+
+tbody{
+    background:#EBEBEB;
+}
+
+th,td{
+    font-size: 1em;
+}
+
+th {
+    color:#D5DDE5;
+    padding:0.4em 1.1em 0.4em 1.1em;
+    background:#55565A;
+    border-bottom:4px solid #9ea7af;
+    border-right: 1px solid #343a45;
+    text-align:left;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    cursor:pointer;
+    vertical-align:middle;
+}
+
+th:first-child {
+    border-top-left-radius:3px;
+}
+
+th:last-child {
+    border-top-right-radius:3px;
+    border-right:none;
+}
+
+tr {
+    border-top: 1px solid #C1C3D1;
+    border-bottom: 1px solid #C1C3D1;
+    color:#666B85;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+tr:first-child {
+    border-top:none;
+}
+
+tr:last-child {
+    border-bottom:none;
+}
+
+tr:nth-child(odd) td {
+    background:#EBEBEB;
+}
+
+tr:nth-child(odd):hover td {
+    background:#4E5066;
+}
+
+td {
+    background:#FFFFFF;
+    text-align:left;
+    vertical-align:middle;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    padding:0.4em 1em;
+}
+
+tr:hover td, tr.selected td {
+    background:#4E5066;
+    color:#FFFFFF;
+    border-top: 1px solid #22262e;
+    border-bottom: 1px solid #22262e;
+}
+
+tr:hover a{
+    color:white;
+}
+
+.table-container {
+    height: 31em;
+}
+.table-container table {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+.table-container table thead {
+    /* head takes the height it requires, 
+    and it's not scaled when table is resized */
+    flex: 0 0 auto;
+    width: calc(100% - 0.9em);
+}
+.table-container table tbody {
+    /* body takes all the remaining available space */
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: scroll;
+}
+.table-container table tbody tr {
+    width: 100%;
+}
+.table-container table thead, .table-container table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
+
+th.narrow{
+    width:4.6em;
+    text-align: center;
+}
+td.narrow{
+    width:4.8em;
+    text-align: center;
+}
+
+th.dateCell{
+    width:5em;
+    text-align: center;
+}
+td.dateCell{
+    width:5.3em;
+    text-align: center;
+}
+#fundList tr{
+    min-height:3em;
+}

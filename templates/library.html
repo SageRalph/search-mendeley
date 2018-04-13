@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Search Mendeley</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='tables.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='sorttable.js') }}"></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="/logout" class="logout">Logout</a>
+        <h1>Search Mendeley</h1>
+    </header>
+
+    <form action="/library" method="GET">
+        <input id="searchBar" type="search" name="query" placeholder="Search..." value="{{query}}">
+    </form>
+
+    <table class="sortable">
+        <thead>
+            <th>Title</th>
+            <th>Year</th>
+            <th>File</th>
+        </thead>
+        <tbody>
+            {% for doc in docs %}
+            <tr>
+                <td>
+                    <a href="/document?document_id={{doc['id']}}">{{doc.title}}</a>
+                </td>
+                {% if doc.year %}
+                <td>{{doc.year}}</td>
+                {% else %}
+                <td></td>
+                {% endif %} {% if doc.file_attached %}
+                <td>
+                    <a href="/download?document_id={{doc['id']}}">Download</a>
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <footer>
+        <form action="/detailsLookup" method="GET">
+            DOI lookup:
+            <input type="text" name="doi">
+            <input type="submit">
+        </form>
+    </footer>
+
+</body>
+
+</html>

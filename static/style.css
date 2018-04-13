@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin:0;
+    padding:0;
+}
+
+header{
+    padding:0.5em;
+    background: lightgray;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+header h1{
+    margin-left:1em;
+}
+
+.logout{
+    float:right;
+    margin-right:10px;
+}
+
+#searchBar{
+    width:100%;
+    padding:1em;
+    font-size:1em;
+}
+
+table{
+    width:100%;
+    margin-top:0;
+    margin-bottom:4em;
+}
+
+footer{
+    position: fixed;
+    box-sizing: border-box;
+    bottom:0;
+    width:100%;
+    padding:0.5em;
+    background:lightgray;
+    box-shadow: 0 -2px 1px -2px gray;
+}
