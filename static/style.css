@@ -1,44 +1,70 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
-body{
+@import url('https://fonts.googleapis.com/css?family=Dosis:600');
+body {
     font-family: 'Open Sans', sans-serif;
-    margin:0;
-    padding:0;
-}
-
-header{
-    padding:0.5em;
-    background: lightgray;
-    box-shadow: 0 4px 2px -2px gray;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    color: aliceblue;
 }
 
 header h1{
-    margin-left:1em;
+    margin-left: 5%;
+    font-family: 'Dosis', sans-serif;
+    font-size: 4em;
+    padding:0;
 }
 
-.logout{
-    float:right;
-    margin-right:10px;
+a {
+    text-decoration: none;
+    color: #468189;
 }
 
-input[type=search]{
-    width:100%;
-    padding:1em;
-    font-size:1em;
+header {
+    padding: 0.5em;
+    background: #031926;
 }
 
-table{
-    width:100%;
-    margin-top:0;
-    margin-bottom:4em;
+.logout {
+    margin-top: 65px;
+    float: right;
+    margin-right: 80px;
+    color: rgb(182, 210, 255);
 }
 
-footer{
+.logout:hover{
+    color: white;
+}
+
+input[type=search] {
+    width: 15%;
+    margin-left: 5%;
+    margin-top: 40px;
+    padding: 1em;
+    font-size: 1em;
+    border-style: inset;
+    display: inline-block;
+    float: left;
+}
+
+input[name=noteQuery] {
+    margin-top: 100px;
+    margin-left: -15%;
+}
+
+table {
+    width: 60%;
+    margin-top: 40px;
+    margin-bottom: 4em;
+    margin-left: 25%;
+    border: thin;
+}
+
+footer {
     position: fixed;
     box-sizing: border-box;
-    bottom:0;
-    width:100%;
-    padding:0.5em;
-    background:lightgray;
-    box-shadow: 0 -2px 1px -2px gray;
+    bottom: 0;
+    width: 100%;
+    padding: 1em;
+    background: #031926;
 }

@@ -1,9 +1,7 @@
 
 table {
     background:#55565A;
-    border-radius:3px;
     border-collapse: collapse;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     animation: float 5s infinite;
     margin-top:1em;
 }
@@ -17,22 +15,16 @@ th,td{
 }
 
 th {
-    color:#D5DDE5;
+    color:#FFFFFF;
     padding:0.4em 1.1em 0.4em 1.1em;
-    background:#55565A;
+    background:rgb(36, 36, 36);
     border-right: 1px solid #343a45;
     text-align:left;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     cursor:pointer;
     vertical-align:middle;
 }
 
-th:first-child {
-    border-top-left-radius:3px;
-}
-
 th:last-child {
-    border-top-right-radius:3px;
     border-right:none;
 }
 
@@ -40,7 +32,6 @@ tr {
     border-top: 1px solid #C1C3D1;
     border-bottom: 1px solid #C1C3D1;
     color:#666B85;
-    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
 }
 
 tr:first-child {
@@ -52,7 +43,7 @@ tr:last-child {
 }
 
 tr:nth-child(odd) td {
-    background:#EBEBEB;
+    background:#ffffff;
 }
 
 tr:nth-child(odd):hover td {
@@ -63,7 +54,6 @@ td {
     background:#FFFFFF;
     text-align:left;
     vertical-align:middle;
-    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
     padding:0.4em 1em;
 }
 
@@ -125,4 +115,15 @@ td.dateCell{
 }
 #fundList tr{
     min-height:3em;
+}
+
+td{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+th{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 1.15em;
 }
