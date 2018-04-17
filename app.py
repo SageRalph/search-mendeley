@@ -49,8 +49,6 @@ def list_documents():
 
     mendeley_session = get_session_from_cookies()
 
-    name = mendeley_session.profiles.me.display_name
-
     if query:
         page = mendeley_session.documents.search(query, view='client').list()
     else:
@@ -63,7 +61,7 @@ def list_documents():
         docs += page.items
         page = page.next_page
 
-    return render_template('library.html', name=name, docs=docs, query=query)
+    return render_template('library.html', docs=docs, query=query)
 
 
 @app.route('/document')
