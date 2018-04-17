@@ -1,4 +1,5 @@
 # Search Mendeley
+Search Mendeley provides advanced tools for browsing and searching your Mendeley library, including annotation search.
 
 ## How to run ##
 
