@@ -45,8 +45,8 @@ def list_documents():
     if 'token' not in session:
         return redirect('/')
 
-    query = request.args.get('query')
-    noteQuery = request.args.get('noteQuery')
+    query = request.args.get('query') or ''
+    noteQuery = request.args.get('noteQuery') or ''
 
     mendeley_session = get_session_from_cookies()
 
@@ -57,7 +57,6 @@ def list_documents():
         docsIter = mendeley_session.documents.search(query, view='client').iter()
     else:
         docsIter = mendeley_session.documents.iter( view='client')
-        query = ''
 
     # Accumulate all the documents
     for doc in docsIter:
@@ -77,8 +76,6 @@ def list_documents():
 
         # Filter the document list
         docs = filter(lambda doc: doc.id in noteDocIDs, docs)
-    else:
-        noteQuery = ''
 
     # Render results
     return render_template('library.html', docs=docs, query=query, noteQuery=noteQuery)
