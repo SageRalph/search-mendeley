@@ -46,22 +46,42 @@ def list_documents():
         return redirect('/')
 
     query = request.args.get('query')
+    noteQuery = request.args.get('noteQuery')
 
     mendeley_session = get_session_from_cookies()
 
+    docs = []
+
+    # Get iterator for user's document library
     if query:
-        page = mendeley_session.documents.search(query, view='client').list()
+        docsIter = mendeley_session.documents.search(query, view='client').iter()
     else:
-        page = mendeley_session.documents.list(view='client')
+        docsIter = mendeley_session.documents.iter( view='client')
         query = ''
 
-    # De-paginate
-    docs = []
-    while hasattr(page, 'next_page'):
-        docs += page.items
-        page = page.next_page
+    # Accumulate all the documents
+    for doc in docsIter:
+        docs.append(doc)
 
-    return render_template('library.html', docs=docs, query=query)
+    # Apply filter for annotations
+    if noteQuery:
+        nq = noteQuery.lower()
+        noteDocIDs = set()
+
+        # Find the IDs of all documents with at least one matching annotation
+        for note in mendeley_session.annotations.iter():
+            if (note.text):
+                text = note.text.lower()
+                if (text.find(nq) > -1):
+                    noteDocIDs.add(note.document().id)
+
+        # Filter the document list
+        docs = filter(lambda doc: doc.id in noteDocIDs, docs)
+    else:
+        noteQuery = ''
+
+    # Render results
+    return render_template('library.html', docs=docs, query=query, noteQuery=noteQuery)
 
 
 @app.route('/document')

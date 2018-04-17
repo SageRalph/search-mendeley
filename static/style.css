@@ -21,7 +21,7 @@ header h1{
     margin-right:10px;
 }
 
-#searchBar{
+input[type=search]{
     width:100%;
     padding:1em;
     font-size:1em;
