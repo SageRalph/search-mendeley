@@ -29,7 +29,7 @@
             </div>
             <input type="search" name="noteQuery" placeholder="Search Annotations..." value="{{noteQuery}}">
             <input id="advancedSearchToggle" type="checkbox" name="advancedSearch" {% if advancedSearch %} checked {% endif %} onclick="toggleAdvSearch();">Advanced Search</input>
-            <input type="submit" style="display: none">
+            <input type="submit" class="hidden">
             <input type="reset" onclick="form.reset(); toggleAdvSearch();">
         </form>
     </nav>
@@ -71,7 +71,7 @@
         <form action="/detailsLookup" method="GET">
             DOI lookup:
             <input type="text" name="doi">
-            <input type="submit">
+            <input type="submit" class="hidden">
         </form>
     </footer>
 
