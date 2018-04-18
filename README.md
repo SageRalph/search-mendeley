@@ -5,7 +5,7 @@ Search Mendeley provides advanced tools for browsing and searching your Mendeley
 
 1. Install [Python 2.7](https://www.python.org/) and [Pip](https://pip.pypa.io/en/latest/).
 
-2. Register your client at the [developer portal](http://dev.mendeley.com).  
+2. [Register your client](https://dev.mendeley.com/reference/topics/application_registration.html).  
 If running locally, use `http://localhost:5000/oauth` as your  Redirect URI.  
 This will give you a client ID and secret.
 
