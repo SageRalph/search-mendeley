@@ -38,7 +38,8 @@
         <thead>
             <th>Title</th>
             <th>Year</th>
-            <th>File</th>
+            <th>Added</th>
+            <th class="sorttable_nosort">File</th>
         </thead>
         <tbody>
             {% for doc in docs %}
@@ -49,6 +50,10 @@
 
                 <td>
                     {% if doc.year %} {{doc.year}} {% endif %}
+                </td>
+
+                <td>
+                    {% if doc.created %} {{doc.created.strftime('%d/%m/%Y')}} {% endif %}
                 </td>
 
                 <td>
