@@ -28,7 +28,9 @@
                 <input type="search" name="abstractQuery" placeholder="Search Abstracts..." value="{{abstractQuery}}">
             </div>
             <input type="search" name="noteQuery" placeholder="Search Annotations..." value="{{noteQuery}}">
-            <input id="advancedSearchToggle" type="checkbox" name="advancedSearch" {% if advancedSearch %} checked {% endif %} onclick="toggleAdvSearch();">Advanced Search</input>
+            <label for="advancedSearchToggle">
+                <input id="advancedSearchToggle" type="checkbox" name="advancedSearch" {% if advancedSearch %} checked {% endif %} onclick="toggleAdvSearch();">Advanced Search</input>
+            </label>
             <input type="submit" class="hidden">
             <input type="reset" onclick="form.reset(); toggleAdvSearch();">
         </form>
