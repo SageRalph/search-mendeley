@@ -46,17 +46,31 @@ def list_documents():
         return redirect('/')
 
     query = request.args.get('query') or ''
+    titleQuery = request.args.get('titleQuery') or ''
+    authorQuery = request.args.get('authorQuery') or ''
+    sourceQuery = request.args.get('sourceQuery') or ''
+    abstractQuery = request.args.get('abstractQuery') or ''
     noteQuery = request.args.get('noteQuery') or ''
 
     mendeley_session = get_session_from_cookies()
 
     docs = []
 
+    advanced = titleQuery or authorQuery or sourceQuery or abstractQuery
+
     # Get iterator for user's document library
-    if query:
-        docsIter = mendeley_session.documents.search(query, view='client').iter()
+    if advanced:
+        docsIter = mendeley_session.documents.advanced_search(
+            title=titleQuery,
+            author=authorQuery,
+            source=sourceQuery,
+            abstract=abstractQuery,
+            view='client').iter()
+    elif query:
+        docsIter = mendeley_session.documents.search(
+            query, view='client').iter()
     else:
-        docsIter = mendeley_session.documents.iter( view='client')
+        docsIter = mendeley_session.documents.iter(view='client')
 
     # Accumulate all the documents
     for doc in docsIter:
@@ -78,7 +92,14 @@ def list_documents():
         docs = filter(lambda doc: doc.id in noteDocIDs, docs)
 
     # Render results
-    return render_template('library.html', docs=docs, query=query, noteQuery=noteQuery)
+    return render_template(
+        'library.html',
+        docs=docs,
+        titleQuery=titleQuery,
+        authorQuery=authorQuery,
+        sourceQuery=sourceQuery,
+        abstractQuery=abstractQuery,
+        noteQuery=noteQuery)
 
 
 @app.route('/document')

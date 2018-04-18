@@ -38,20 +38,18 @@ header>img, header>h1{
     color: white;
 }
 
-input[type=search] {
-    width: 15%;
-    margin-left: 5%;
+nav{
+    width: 25%;
+    float: left;
     margin-top: 40px;
+}
+
+input[type=search] {
+    width:70%;
+    margin: 0 15% 10px 15%;
     padding: 1em;
     font-size: 1em;
     border-style: inset;
-    display: inline-block;
-    float: left;
-}
-
-input[name=noteQuery] {
-    margin-top: 100px;
-    margin-left: -15%;
 }
 
 table {

@@ -17,11 +17,17 @@
         <img src="{{ url_for('static', filename='SearchMendeley-white.png') }}">
     </header>
 
-    <form action="/library" method="GET">
-        <input type="search" name="query" placeholder="Search..." value="{{query}}">
-        <input type="search" name="noteQuery" placeholder="Search Annotations..." value="{{noteQuery}}">
-        <input type="submit" style="display: none">
-    </form>
+    <nav>
+        <form action="/library" method="GET">
+            <input type="search" name="query" placeholder="Search..." value="{{query}}">
+            <input type="search" name="titleQuery" placeholder="Search By Title..." value="{{titleQuery}}">
+            <input type="search" name="authorQuery" placeholder="Search By Author..." value="{{authorQuery}}">
+            <input type="search" name="sourceQuery" placeholder="Search By Source..." value="{{sourceQuery}}">
+            <input type="search" name="abstractQuery" placeholder="Search Abstracts..." value="{{abstractQuery}}">
+            <input type="search" name="noteQuery" placeholder="Search Annotations..." value="{{noteQuery}}">
+            <input type="submit" style="display: none">
+        </form>
+    </nav>
 
     <table class="sortable">
         <thead>
