@@ -51,15 +51,14 @@ def list_documents():
     sourceQuery = request.args.get('sourceQuery') or ''
     abstractQuery = request.args.get('abstractQuery') or ''
     noteQuery = request.args.get('noteQuery') or ''
+    advancedSearch = request.args.get('advancedSearch')
 
     mendeley_session = get_session_from_cookies()
 
     docs = []
 
-    advanced = titleQuery or authorQuery or sourceQuery or abstractQuery
-
     # Get iterator for user's document library
-    if advanced:
+    if advancedSearch and (titleQuery or authorQuery or sourceQuery or abstractQuery):
         docsIter = mendeley_session.documents.advanced_search(
             title=titleQuery,
             author=authorQuery,
@@ -95,11 +94,13 @@ def list_documents():
     return render_template(
         'library.html',
         docs=docs,
+        query=query,
         titleQuery=titleQuery,
         authorQuery=authorQuery,
         sourceQuery=sourceQuery,
         abstractQuery=abstractQuery,
-        noteQuery=noteQuery)
+        noteQuery=noteQuery,
+        advancedSearch=advancedSearch)
 
 
 @app.route('/document')

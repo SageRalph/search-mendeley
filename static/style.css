@@ -39,14 +39,15 @@ header>img, header>h1{
 }
 
 nav{
-    width: 25%;
+    width: 20%;
     float: left;
+    padding:0 5%;
     margin-top: 40px;
 }
 
 input[type=search] {
-    width:70%;
-    margin: 0 15% 10px 15%;
+    width:100%;
+    margin: 0 0 10px 0;
     padding: 1em;
     font-size: 1em;
     border-style: inset;
@@ -71,4 +72,8 @@ footer {
 header, footer{
     background: #031926;
     color: aliceblue;
+}
+
+.hidden{
+    display:none;
 }
