@@ -53,6 +53,10 @@ input[type=search] {
     border-style: inset;
 }
 
+input[type=reset]{
+    float:right;
+}
+
 table {
     width: 60%;
     margin-top: 40px;
