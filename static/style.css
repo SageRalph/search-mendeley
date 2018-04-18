@@ -23,6 +23,10 @@ header {
     padding: 0.5em;
 }
 
+header>img, header>h1{
+    display: inline-block;
+}
+
 .logout {
     margin-top: 65px;
     float: right;
