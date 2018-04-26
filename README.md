@@ -1,7 +1,7 @@
 # Search Mendeley
 Search Mendeley provides advanced tools for browsing and searching your Mendeley library, including annotation search.
 
-## How to run ##
+## Setup ##
 
 1. Install [Python 2.7](https://www.python.org/) and [Pip](https://pip.pypa.io/en/latest/).
 
@@ -9,14 +9,17 @@ Search Mendeley provides advanced tools for browsing and searching your Mendeley
 If running locally, use `http://localhost:5000/oauth` as your  Redirect URI.  
 This will give you a client ID and secret.
 
-3. Rename the config.yml.example file to config.yml, and fill in your client ID and secret in this file.
+3. Navigate to the /app directory
 
-4. Run the following command to install dependencies:
+4. Rename the config.yml.example file to config.yml, and fill in your client ID and secret in this file.
+
+5. Run the following command to install dependencies:
 
         pip install -r requirements.txt
 
-5. Start the server:
+## How to run ##
 
-		app.py
+On Windows, launch the application by running RUN.bat
 
-6. Go to http://localhost:5000 in your browser.
+Otherwise, naviagte to the /app directory and run app.py using Python 2.7  
+Then go to http://localhost:5000 in your browser.
