@@ -7,7 +7,7 @@ Search Mendeley provides advanced tools for browsing and searching your Mendeley
 
 2. Install pipenv
 
-        pip install pipenv
+        $ pip install pipenv
 
 3. [Register your client](https://dev.mendeley.com/reference/topics/application_registration.html).  
 If running locally, use `http://localhost:5000/oauth` as your  Redirect URI.  
@@ -17,13 +17,13 @@ This will give you a client ID and secret.
 
 5. Rename the config.yml.example file to config.yml, and fill in your client ID and secret in this file.
 
-6. Run the following command to install dependencies:
+6. Install dependencies using pipenv
 
-        pipenv install
+        $ pipenv install
 
 ## How to run ##
 
 On Windows, launch the application by running RUN.bat
 
-Otherwise, naviagte to the /app directory and run app.py using pipenv 
+Otherwise, naviagte to the /app directory and run app.py using pipenv  
 Then go to http://localhost:5000 in your browser.
