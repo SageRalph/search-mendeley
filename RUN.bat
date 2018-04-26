@@ -1,3 +1,3 @@
 start http://localhost:5000
 CD app
-py -2 app.py
+pipenv run python app.py

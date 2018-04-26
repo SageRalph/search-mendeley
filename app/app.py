@@ -88,7 +88,7 @@ def list_documents():
                     noteDocIDs.add(note.document().id)
 
         # Filter the document list
-        docs = filter(lambda doc: doc.id in noteDocIDs, docs)
+        docs = [doc for doc in docs if doc.id in noteDocIDs]
 
     # Render results
     return render_template(
