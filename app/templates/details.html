@@ -1,28 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
+<!>
+{% block content %}
 
-<head>
-    <meta charset="utf-8">
-    <title>Search Mendeley</title>
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-</head>
+<h1>{{doc['title']}}</h1>
 
-<body>
-    <h1>{{doc['title']}}</h1>
+<h2>Authors</h2>
+<ul>
+    {% for author in doc['authors'] %}
+    <li>{{author['first_name']}} {{author['last_name']}}</li>
+    {% endfor %}
+</ul>
 
-    <h2>Authors</h2>
-    <ul>
-        {% for author in doc['authors'] %}
-        <li>{{author['first_name']}} {{author['last_name']}}</li>
-        {% endfor %}
-    </ul>
+<h2>Source</h2>
+{{doc['source']}}
 
-    <h2>Source</h2>
-    {{doc['source']}}
-
-    <h2>Year</h2>
-    {{doc['year']}}
-
-</body>
-
-</html>
+<h2>Year</h2>
+{{doc['year']}}
+<!>
+{% endblock %}
