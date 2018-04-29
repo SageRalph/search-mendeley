@@ -34,18 +34,18 @@ header>img, header>h1{
     color: rgb(182, 210, 255);
 }
 
-.logout:hover{
+.logout:hover {
     color: white;
 }
 
-nav{
+nav {
     width: 20%;
     float: left;
     padding:0 5%;
     margin-top: 40px;
 }
 
-input[type=search] {
+nav input[type=search] {
     width:100%;
     margin: 0 0 10px 0;
     padding: 1em;
@@ -53,16 +53,21 @@ input[type=search] {
     border-style: inset;
 }
 
-input[type=reset]{
+nav input[type=reset] {
     float:right;
 }
 
-table {
+#libTable_wrapper {
     width: 60%;
     margin-top: 40px;
     margin-bottom: 4em;
-    margin-left: 25%;
-    border: thin;
+    margin-left: 30%;
+    clear:none;
+    border:1px;
+}
+
+#libTable {
+    clear:none;
 }
 
 footer {
@@ -73,11 +78,11 @@ footer {
     padding: 1em;
 }
 
-header, footer{
+header, footer {
     background: #031926;
     color: aliceblue;
 }
 
-.hidden{
+.hidden {
     display:none;
 }

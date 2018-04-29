@@ -1,4 +1,13 @@
 
+$(document).ready(function () {
+    $('#libTable').DataTable({
+        "aoColumnDefs": [
+            // UK date format
+            { "aTargets": [2], "sType": "uk_date" }
+        ]
+    });
+});
+
 function toggleAdvSearch() {
     var advancedSearch = document.getElementById("advancedSearchToggle").checked;
     if (advancedSearch) {

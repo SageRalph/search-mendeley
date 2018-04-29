@@ -1,10 +1,15 @@
 {% extends "layout.html" %}
 <!>
-{% block head %} {{ super() }}
-<script src="{{ url_for('static', filename='sorttable.js') }}"></script>
+{% block head %}
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- DataTables -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<!-- Custom -->
 <script src="{{ url_for('static', filename='library.js') }}"></script>
 <!>
-{% endblock %}
+{{ super() }} {% endblock %}
 <!>
 {% block content %}
 
@@ -32,12 +37,12 @@
     </form>
 </nav>
 
-<table class="sortable">
+<table id="libTable" class="display">
     <thead>
         <th>Title</th>
         <th>Year</th>
         <th>Added</th>
-        <th class="sorttable_nosort">File</th>
+        <th>File</th>
     </thead>
     <tbody>
         {% for doc in docs %}
@@ -47,11 +52,15 @@
             </td>
 
             <td>
-                {% if doc.year %} {{doc.year}} {% endif %}
+                {% if doc.year %}
+                <time>{{doc.year}}</time>
+                {% endif %}
             </td>
 
-            <td>
-                {% if doc.created %} {{doc.created.strftime('%d/%m/%Y')}} {% endif %}
+            <td class="datetime">
+                {% if doc.created %}
+                <time datetime="{{doc.created}}">{{doc.created.strftime('%d/%m/%Y %H:%M')}}</time>
+                {% endif %}
             </td>
 
             <td>
