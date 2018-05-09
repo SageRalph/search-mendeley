@@ -2,6 +2,10 @@
 <!>
 {% block content %}
 
+<header>
+    <a href='/library'>Return to Library</a>
+</header>
+
 <h1>{{doc['title']}}</h1>
 
 <h2>Authors</h2>
@@ -19,5 +23,9 @@
 
 <h2>Abstract</h2>
 {{doc['abstract']}}
+
+<footer>
+    <a href='/library'>Return to Library</a>
+</footer>
 <!>
 {% endblock %}
