@@ -13,15 +13,21 @@
     <h2>Authors</h2>
     <ul>
         {% for author in doc['authors'] %}
-        <li><a href="{{ 'https://www.mendeley.com/research-papers/?query=' +author['first_name'] + ' ' + author['last_name']}}">{{author['first_name']}} {{author['last_name']}}</a></li>
+        <li>
+            <a href="https://www.mendeley.com/research-papers/?query={{author['first_name']}} {{author['last_name']}}">{{author['first_name']}} {{author['last_name']}}</a>
+        </li>
         {% endfor %}
     </ul>
 
-    <h2>Source</h2>
-    {{doc['source']}}
+    {% if doc.source %}
+        <h2>Source</h2>
+        <a href="https://www.mendeley.com/research-papers/?query={{doc['source']}}">{{doc['source']}}</a>
+    {% endif %}
 
-    <h2>Year</h2>
-    {{doc['year']}}
+    {% if doc.year %}
+        <h2>Year</h2>
+        {{doc['year']}}
+    {% endif %}
 
     <h2>Abstract</h2>
     <p>{{doc['abstract']}}</p>
