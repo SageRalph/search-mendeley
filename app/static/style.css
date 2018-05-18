@@ -81,3 +81,16 @@ header, footer{
 .hidden{
     display:none;
 }
+
+.content{
+    padding:2em;
+    padding-top:0;
+}
+
+.content p{
+    max-width: 70em;
+}
+
+.banner{
+    padding:1em;
+}
