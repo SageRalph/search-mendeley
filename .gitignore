@@ -9,3 +9,4 @@ Gemfile.lock
 config.yml
 virtual
 build
+.vscode
