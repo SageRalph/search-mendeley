@@ -8,3 +8,4 @@ Gemfile.lock
 *.pyc
 config.yml
 virtual
+build
